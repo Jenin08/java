@@ -1,0 +1,63 @@
+package functions;
+import java.util.Scanner;
+
+public class asc_dsc_ {
+	Scanner sc=new Scanner(System.in);
+	int size,i,j,temp=0;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		asc_dsc_ obj1=new asc_dsc_();
+		obj1.des();
+
+	}
+
+	public int[] accpt() {
+//		asc_dsc_ obj1=new asc_dsc_();
+	
+	 System.out.println("Enter the size of array:");
+	size=sc.nextInt();
+		int arr1[]=new int[size];
+		System.out.println("Enter the array elements:");
+		for(i=0;i<size;i++)
+		{
+		      arr1[i]=sc.nextInt();
+		}
+		System.out.println("Your array elements:");
+		
+		for	(i=0;i<size;i++)
+		{
+		System.out.println(arr1[i]);
+		}
+		return arr1;
+	}
+	public void des() {
+		asc_dsc_ obj =new asc_dsc_();
+		
+
+		int arr[]=obj.accpt();
+		System.out.println("size ="+size);
+		
+		
+		for( i=0;i<size;i++)
+		{
+		for(j=i+1;j<size;j++)
+		{
+		   if(arr[i]<arr[j])
+		             {
+		             temp=arr[i];
+		             arr[i]=arr[j];    
+		              arr[j]=temp;
+		             }
+
+		}
+		}
+		System.out.println("Your descending array elements:");
+		for(int i=0;i<size;i++)
+		{
+		System.out.println(arr[i]);
+		}
+		
+	}
+
+}
