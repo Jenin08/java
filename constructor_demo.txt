@@ -1,0 +1,72 @@
+package functions;
+
+import java.util.Scanner;
+
+public class constructor_demo {
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		constructor_demo obj = new constructor_demo(34);
+		acc_num();
+		acc_two_nums();
+		 SI();		
+		
+		
+
+	}
+	public constructor_demo(int num) {
+		int digit,sum=0;
+		while(num>0) {
+			digit = num%10;
+			sum = sum+digit;
+			num = num / 10;
+			}
+		System.out.println("the addition of digit is "+sum);	
+	}
+		public constructor_demo(int a,int b) {
+			System.out.println("Sum of numbers is "+(a+b));
+		}
+		
+		public constructor_demo(float p, float r,float t) {
+	        float si;
+	        si = (r * t * p) / 100;
+	        System.out.print("The Simple Interest is : " + si);
+		}
+		
+		//------------------------------------------------------//
+		
+		
+		public static void acc_num() {
+			Scanner sc = new Scanner (System.in);
+			int num;
+			System.out.println("Enter the number");
+			num = sc.nextInt();
+			constructor_demo obj =new constructor_demo(num);
+			
+		}
+		public static void acc_two_nums() {
+			Scanner sc = new Scanner (System.in);
+
+			System.out.println("Enter two numbers ");
+			int a =sc.nextInt();
+			int b =sc.nextInt();
+			constructor_demo obj =new constructor_demo(a,b);
+			
+			
+		}
+		public static void SI() {
+			float p, r, t;
+	        Scanner sc = new Scanner(System.in);
+	        System.out.print("Enter the Principal : ");
+	        p = sc.nextFloat();
+	        System.out.print("Enter the Rate of interest : ");
+	        r = sc.nextFloat();
+	        System.out.print("Enter the Time period : ");
+	        t = sc.nextFloat();
+	        constructor_demo obj =new constructor_demo(p,r,t);
+			
+		}
+		
+
+}
