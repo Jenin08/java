@@ -56,3 +56,39 @@ public class grt  extends inheritence{
 	}
 		
 }
+------------------------------------------
+public class marks extends inheritence
+{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		marks obj =new marks();
+		obj.pr();
+
+	}
+	public void pr() {
+		n=5;
+		
+		System.out.println("Enter the marks: ");  
+		for(int i=0; i<n; i++)  
+		{  
+		  
+		array[i]=sc.nextInt();  
+		} 
+		int sum=0;
+		int i;
+		for (i = 0; i < array.length; i++)
+		{
+			sum += array[i];
+
+		}
+         sum = sum*100/500;
+         
+        System.out.println("your percentage is "+sum);
+        
+
+		
+	}
+
+}
+------------------------------------
