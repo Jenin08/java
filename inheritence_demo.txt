@@ -1,0 +1,58 @@
+package functions;
+
+import java.util.Scanner;
+
+public class inheritence {
+	Scanner sc=new Scanner(System.in);
+
+
+
+int n;
+
+
+	  
+int[] array = new int[n];
+int temp;
+int num;
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+	}
+
+}
+------------------------
+public class grt  extends inheritence{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		grt obj = new grt();
+		obj.ans();
+
+	}
+	public void ans() {
+		System.out.println(" hpw many numbers you gonna enter");
+		n=sc.nextInt();
+
+		System.out.println("Enter the numbers : ");  
+	for(int i=0; i<n; i++)  
+	{  
+	  
+	array[i]=sc.nextInt();  
+	} 
+		for(int i = 0; i<n; i++ ){
+	         for(int j = i+1; j<n; j++){
+	            if(array[i]>array[j]){
+	               temp = array[i];
+	               array[i] = array[j];
+	               array[j] = temp;
+	            }
+	         }
+	      }
+	      System.out.println("Third largest element is:: "+array[n-1]);
+		
+	}
+		
+}
