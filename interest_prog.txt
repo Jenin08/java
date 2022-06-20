@@ -1,0 +1,85 @@
+import java.util.Scanner;
+
+public class user_info {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		info();
+
+	}
+	public user_info(int n2,int r, int n3){
+		int interest_earned = 0;
+		int i=0;
+		do {
+		interest_earned=n2*r/100;//for 1 year
+		n2+=interest_earned;
+		i++;
+		
+		}
+		while(i<n3);
+		System.out.println("total amount after ten year = "+n2);
+
+
+	
+		
+		
+			
+		
+	}
+	public static void info() {
+		int r;
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter your name");
+		String name=sc.next();
+		System.out.println("enter your age ");
+		int age =sc.nextInt();
+		System.out.println("Enter your gender");
+		char g=sc.next().charAt(0);
+		
+		
+		System.out.println("Enter your acc_no");
+		int n = sc.nextInt();
+		System.out.println("Enter the amount  ");
+		int n2 =sc.nextInt();
+		System.out.println("for how many years you want to keep your money");
+		int n3= sc.nextInt();
+		
+		
+		
+		if(age>=60 && g=='f'|| g=='F') 
+		{
+			
+			System.out.println("Rate of interest is 20%");
+			
+			r=20;
+			user_info obj = new user_info(n2,r,n3);
+			
+		}
+		else if(age>=60 && g=='m'|| g=='M') {
+			System.out.println("Rate of interest is 17%");
+			r =17;
+			user_info obj = new user_info(n2,r,n3);
+			
+
+		}
+		else if(age<60 &&  g=='f'|| g=='F' ) {
+			System.out.println("Rate of interest is 14%");
+			r=14;
+			user_info obj = new user_info(n2,r,n3);
+
+		}
+		else {
+			System.out.println("Rate of interest is 12%");
+			r=12;
+			user_info obj = new user_info(n2,r,n3);
+
+		}
+		
+		
+		
+
+		
+		
+	}
+
+}
