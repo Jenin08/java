@@ -1,0 +1,113 @@
+package banking;
+
+import java.util.Scanner;
+
+public class acc_details {
+	Scanner sc = new Scanner(System.in);
+	int sec_no = 8;
+	int temp;
+	int pin=3476;
+	int acc_balance =120000;
+//	int new_balance = acc_balance;
+	char O;
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		acc_details obj = new acc_details();
+		obj.acc();
+		
+
+	}
+	public void acc() 
+	
+	{
+		System.out.println("Enter your pin");
+		int pin_no =sc.nextInt();
+		if(pin==pin_no)
+		{
+		System.out.println("Enter account type");
+		System.out.println("1: Savings \t 2:Current \t 3:FD");
+		int acc_type = sc.nextInt();
+		switch(acc_type) 
+		{
+			case 1 : do{
+				System.out.println("What you want to perform \n 1:Withdraw \t 2:Deposit \n 3:Check balance \t 4:change_pin");
+			
+			int optn=sc.nextInt();
+			operations obj1 = new operations();
+			switch(optn) 
+			{
+			case 1: obj1.withdraw();
+			break;
+			case 2: obj1.deposit();
+			break;
+			case 3: obj1.check_bal();
+			break;
+			case 4: obj1.change_pin();
+			break;
+			default : System.out.println("enter valid choice ");
+			
+			}
+			System.out.println("do u want to continue?");
+			O = sc.next().charAt(0);
+			}
+			while(O=='y'|| O=='Y');
+			
+			
+		
+		}
+		}	
+	}
+	
+	
+	
+
+}
+public void withdraw()
+
+{
+	System.out.println("enter the amount  you want to with draw");
+	int amt = sc.nextInt();
+	if(amt>acc_balance) {
+		
+		System.out.println("Not enough balance ");
+	}
+	else {
+		System.out.println("Transaction is being processed");
+		acc_balance = acc_balance - amt;
+		System.out.println("Remaining balance "+acc_balance);
+		
+	}
+
+}
+public void deposit()
+{
+	System.out.println("enter the amount you want to deposit ");
+	int amt = sc.nextInt();
+	acc_balance = acc_balance+amt;
+	System.out.println("Amount deposited successfully ");
+	System.out.println("Balance amount"+acc_balance);
+	
+}
+public void check_bal() {
+	System.out.println("Your balance is "+acc_balance);
+	
+}
+public void change_pin() {
+	System.out.println("Enter your security number");
+	int num = sc.nextInt();
+	if(num==sec_no) {
+		System.out.println("Enter new pin");
+		int num1= sc.nextInt();
+		sec_no = temp;
+		num1 = sec_no;
+		temp=num1;
+		System.out.println("Pin changed successfully");
+		
+		
+	}
+	
+}
+
+}
